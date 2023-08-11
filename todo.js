@@ -2,7 +2,11 @@ const toDoForm = document.querySelector('#todo-form');
 const toDoInput = document.querySelector('#todo-form input');
 const toDoList = document.querySelector('#todo-list');
 
-function deleteToDo(){
+function deleteToDo(event){
+    //button을 누른 li 태그를 가져온다.
+    const li = event.target.parentElement;
+    //해당하는 li 태그를 지운다.
+    li.remove();
 
 }
 
@@ -21,6 +25,7 @@ function paintToDo(newTodo){
 }
 
 function handleToDoSubmit(event) {
+    console.log(event);
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value='';
